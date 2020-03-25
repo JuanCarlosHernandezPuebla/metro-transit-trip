@@ -1,0 +1,21 @@
+{
+  "schema": {
+    "title": "Trip",
+    "type": "object",
+    "properties": {
+      "route": {
+        "type": "string",
+        "title": "Route",
+        "default": "",
+        "enum": [],
+        "enumNames": []
+      }
+    }
+  },
+  "uiSchema": {
+    "route": {
+      "ui:title": "Route",
+      "ui:widget": "select"
+    }
+  }
+}
