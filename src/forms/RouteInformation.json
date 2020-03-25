@@ -6,7 +6,6 @@
       "route": {
         "type": "string",
         "title": "Route",
-        "default": "",
         "enum": [],
         "enumNames": []
       }
@@ -15,7 +14,8 @@
   "uiSchema": {
     "route": {
       "ui:title": "Route",
-      "ui:widget": "select"
+      "ui:widget": "select",
+      "ui:placeholder": "Select a route"
     }
   }
 }

@@ -7,7 +7,7 @@ import { cloneDeep, set } from 'lodash';
 const _ = {
   cloneDeep,
   set
-}
+};
 
 const metroTransitEntry = config['metroTransitEntry'];
 
