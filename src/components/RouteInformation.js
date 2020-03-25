@@ -53,6 +53,7 @@ export default function RouteInformation() {
       <div className="col-sm-12">
         <div className="col-sm-6">
           <Form
+            id={"route_info_form"}
             schema={form.schema}
             uiSchema={form.uiSchema}
             formData={formData}
