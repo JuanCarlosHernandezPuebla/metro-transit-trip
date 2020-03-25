@@ -1,0 +1,42 @@
+{
+  "name": "metro-transit-trip",
+  "description": "A React application providing Metro Transit route information for your next trip.",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "mt": "yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuanCarlosHernandezPuebla/metro-transit-trip"
+  },
+  "author": "Juan Carlos Hernandez Puebla",
+  "license": "UNLICENSED",
+  "private": false,
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.0.1",
+    "jest": "^25.1.0",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.7",
+    "lodash": "^4.17.15",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-jsonschema-form": "^1.8.1",
+    "react-router-dom": "^5.1.2",
+    "webpack": "^4.42.1"
+  }
+}
