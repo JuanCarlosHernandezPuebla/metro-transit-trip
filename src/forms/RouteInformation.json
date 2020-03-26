@@ -8,6 +8,12 @@
         "title": "Route",
         "enum": [],
         "enumNames": []
+      },
+      "direction": {
+        "type": "string",
+        "title": "Direction",
+        "enum": [],
+        "enumNames": []
       }
     }
   },
@@ -16,6 +22,11 @@
       "ui:title": "Route",
       "ui:widget": "select",
       "ui:placeholder": "Select a route"
+    },
+    "direction": {
+      "ui:title": "Direction",
+      "ui:widget": "select",
+      "ui:placeholder": "Select a direction"
     }
   }
 }
