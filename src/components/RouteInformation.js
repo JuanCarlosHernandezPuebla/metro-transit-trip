@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Form from "react-jsonschema-form";
 import * as RouteInformationForm from '../forms/RouteInformation.json';
 import { config } from '../config';
-import { cloneDeep, set } from 'lodash';
+import { cloneDeep, isNil, set } from 'lodash';
 
 const _ = {
   cloneDeep,
+  isNil,
   set
 };
 
@@ -72,7 +73,9 @@ export default function RouteInformation() {
 
   const onChange = formData => {
     const { route } = formData;
-    loadDirections(route);
+    if (!_.isNil(route)) {
+      loadDirections(route);
+    }
     setFormData(formData);
   };
 
