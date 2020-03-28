@@ -16,6 +16,8 @@ const routesEndPoint = `${metroTransitEntry}${config['endpoints']['routes']}`;
 
 const directionsEndPoint = `${metroTransitEntry}${config['endpoints']['directions']}`;
 
+const stopsEndPoint = `${metroTransitEntry}${config['endpoints']['stops']}`;
+
 export default function RouteInformation() {
 
   const [formData, setFormData] = useState({});
@@ -28,6 +30,8 @@ export default function RouteInformation() {
   const [routes, setRoutes] = useState([]);
 
   const [directions, setDirections] = useState([]);
+
+  const [stops, setStops] = useState([]);
 
   useEffect(() => loadRoutes(), []);
 
@@ -43,6 +47,26 @@ export default function RouteInformation() {
     setForm(newForm);
   }, [directions]);
 
+  useEffect(() => {
+    const newForm = _.cloneDeep(form);
+    setStopEnums(newForm, 'schema.properties.stop');
+    setForm(newForm);
+  }, [stops]);
+
+  useEffect(() => {
+    const { route } = formData;
+    if (!_.isNil(route)) {
+      loadDirections(route);
+    }
+  }, [formData.route]);
+
+  useEffect(() => {
+    const { route, direction } = formData;
+    if (!_.isNil(route) && !_.isNil(direction)) {
+      loadStops(route, direction);
+    }
+  }, [formData.direction]);
+
   const loadRoutes = () => {
     fetch(routesEndPoint, {
       method: 'GET'
@@ -52,14 +76,23 @@ export default function RouteInformation() {
     .catch(error => console.error('Error: ', error))
   };
 
-  const loadDirections = (route) => {
+  const loadDirections = route => {
     fetch(directionsEndPoint.replace('{route}', route), {
       method: 'GET'
     })
     .then(response => response.json())
     .then(data => setDirections(data))
     .catch(error => console.error('Error: ', error))
-  }
+  };
+
+  const loadStops = (route, direction) => {
+    fetch(stopsEndPoint.replace('{route}', route).replace('{direction}', direction), {
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => setStops(data))
+    .catch(error => console.error('Error: ', error))
+  };
 
   const setRouteEnums = (form, path) => {
     _.set(form, path + '.enum', routes.map(route => route.RouteId));
@@ -67,15 +100,16 @@ export default function RouteInformation() {
   };
 
   const setDirectionEnums = (form, path) => {
-    _.set(form, path + '.enum', directions.map(route => route.DirectionId));
-    _.set(form, path + '.enumNames', directions.map(route => route.DirectionName));
+    _.set(form, path + '.enum', directions.map(direction => direction.DirectionId));
+    _.set(form, path + '.enumNames', directions.map(direction => direction.DirectionName));
+  };
+
+  const setStopEnums = (form, path) => {
+    _.set(form, path + '.enum', stops.map(stop => stop.PlaceCode));
+    _.set(form, path + '.enumNames', stops.map(stop => stop.Description));
   };
 
   const onChange = formData => {
-    const { route } = formData;
-    if (!_.isNil(route)) {
-      loadDirections(route);
-    }
     setFormData(formData);
   };
 
