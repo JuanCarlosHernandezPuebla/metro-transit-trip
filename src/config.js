@@ -6,7 +6,8 @@ const setupConfig = () => {
         metroTransitEntry: 'https://svc.metrotransit.org/',
         endpoints: {
           routes: 'nextripv2/routes',
-          directions: 'nextripv2/directions/{route}'
+          directions: 'nextripv2/directions/{route}',
+          stops: 'nextripv2/stops/{route}/{direction}'
         }
       }
     case 'production':
@@ -15,7 +16,8 @@ const setupConfig = () => {
         metroTransitEntry: 'https://svc.metrotransit.org/',
         endpoints: {
           routes: 'nextripv2/routes',
-          directions: 'nextripv2/directions/{route}'
+          directions: 'nextripv2/directions/{route}',
+          stops: 'nextripv2/stops/{route}/{direction}'
         }
       }
     default:
@@ -24,7 +26,8 @@ const setupConfig = () => {
         metroTransitEntry: 'https://svc.metrotransit.org/',
         endpoints: {
           routes: 'nextripv2/routes',
-          directions: 'nextripv2/directions/{route}'
+          directions: 'nextripv2/directions/{route}',
+          stops: 'nextripv2/stops/{route}/{direction}'
         }
       }
   }
