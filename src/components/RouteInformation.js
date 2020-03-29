@@ -124,10 +124,12 @@ export default function RouteInformation() {
             schema={form.schema}
             uiSchema={form.uiSchema}
             formData={formData}
-            onChange={({formData}) => onChange(formData)}
+            onChange={({ formData }) => onChange(formData)}
             onSubmit={() => { }}
             onError={() => { }}
-          />
+          >
+            <button type="submit" className="d-none"></button>
+          </Form>
         </div>
       </div>
     </div>
