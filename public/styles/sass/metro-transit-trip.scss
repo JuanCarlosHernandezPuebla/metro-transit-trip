@@ -1,0 +1,35 @@
+/*
+* === Body ===
+*/
+
+$body-color: #f7fbfb;
+
+body {
+	background-color: $body-color;
+}
+
+
+/*
+* === Header ===
+*/
+
+$header-color: #337dcc;
+
+header {
+	background-color: $header-color;
+	min-height: 100px;
+}
+
+/*
+* === Footer ===
+*/
+
+$footer-color: #36454f;
+
+footer {
+	background-color: $footer-color;
+	bottom: 0;
+	min-height: 100px;
+	position: fixed;
+	width: 100%;
+}
