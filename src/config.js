@@ -9,7 +9,7 @@ const setupConfig = () => {
           directions: 'nextripv2/directions/{route}',
           stops: 'nextripv2/stops/{route}/{direction}'
         }
-      }
+      };
     case 'production':
       return {
         base: '',
@@ -19,7 +19,7 @@ const setupConfig = () => {
           directions: 'nextripv2/directions/{route}',
           stops: 'nextripv2/stops/{route}/{direction}'
         }
-      }
+      };
     default:
       return {
         base: 'http://localhost:3000/',
@@ -29,7 +29,7 @@ const setupConfig = () => {
           directions: 'nextripv2/directions/{route}',
           stops: 'nextripv2/stops/{route}/{direction}'
         }
-      }
+      };
   }
 };
 export const config = setupConfig();

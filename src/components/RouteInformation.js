@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Form from "react-jsonschema-form";
+import Form from 'react-jsonschema-form';
 import * as RouteInformationForm from '../forms/RouteInformation.json';
 import { config } from '../config';
 import { cloneDeep, isNil, set } from 'lodash';
@@ -19,7 +19,6 @@ const directionsEndPoint = `${metroTransitEntry}${config['endpoints']['direction
 const stopsEndPoint = `${metroTransitEntry}${config['endpoints']['stops']}`;
 
 export default function RouteInformation() {
-
   const [formData, setFormData] = useState({});
 
   const [form, setForm] = useState({
@@ -71,42 +70,69 @@ export default function RouteInformation() {
     fetch(routesEndPoint, {
       method: 'GET'
     })
-    .then(response => response.json())
-    .then(data => setRoutes(data))
-    .catch(error => console.error('Error: ', error))
+      .then(response => response.json())
+      .then(data => setRoutes(data))
+      .catch(error => console.error('Error: ', error));
   };
 
   const loadDirections = route => {
     fetch(directionsEndPoint.replace('{route}', route), {
       method: 'GET'
     })
-    .then(response => response.json())
-    .then(data => setDirections(data))
-    .catch(error => console.error('Error: ', error))
+      .then(response => response.json())
+      .then(data => setDirections(data))
+      .catch(error => console.error('Error: ', error));
   };
 
   const loadStops = (route, direction) => {
-    fetch(stopsEndPoint.replace('{route}', route).replace('{direction}', direction), {
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(data => setStops(data))
-    .catch(error => console.error('Error: ', error))
+    fetch(
+      stopsEndPoint.replace('{route}', route).replace('{direction}', direction),
+      {
+        method: 'GET'
+      }
+    )
+      .then(response => response.json())
+      .then(data => setStops(data))
+      .catch(error => console.error('Error: ', error));
   };
 
   const setRouteEnums = (form, path) => {
-    _.set(form, path + '.enum', routes.map(route => route.RouteId));
-    _.set(form, path + '.enumNames', routes.map(route => route.Description));
+    _.set(
+      form,
+      path + '.enum',
+      routes.map(route => route.RouteId)
+    );
+    _.set(
+      form,
+      path + '.enumNames',
+      routes.map(route => route.Description)
+    );
   };
 
   const setDirectionEnums = (form, path) => {
-    _.set(form, path + '.enum', directions.map(direction => direction.DirectionId));
-    _.set(form, path + '.enumNames', directions.map(direction => direction.DirectionName));
+    _.set(
+      form,
+      path + '.enum',
+      directions.map(direction => direction.DirectionId)
+    );
+    _.set(
+      form,
+      path + '.enumNames',
+      directions.map(direction => direction.DirectionName)
+    );
   };
 
   const setStopEnums = (form, path) => {
-    _.set(form, path + '.enum', stops.map(stop => stop.PlaceCode));
-    _.set(form, path + '.enumNames', stops.map(stop => stop.Description));
+    _.set(
+      form,
+      path + '.enum',
+      stops.map(stop => stop.PlaceCode)
+    );
+    _.set(
+      form,
+      path + '.enumNames',
+      stops.map(stop => stop.Description)
+    );
   };
 
   const onChange = formData => {
@@ -116,23 +142,21 @@ export default function RouteInformation() {
   //TODO: Add remaining inputs and apply styling.
 
   return (
-    <div className="container">
-      <div className="col-sm-12">
-        <div className="col-sm-6">
+    <div className='container'>
+      <div className='col-sm-12'>
+        <div className='col-sm-6'>
           <Form
-            id={"route_info_form"}
+            id={'route_info_form'}
             schema={form.schema}
             uiSchema={form.uiSchema}
             formData={formData}
             onChange={({ formData }) => onChange(formData)}
-            onSubmit={() => { }}
-            onError={() => { }}
-          >
-            <button type="submit" className="d-none"></button>
+            onSubmit={() => {}}
+            onError={() => {}}>
+            <button type='submit' className='d-none'></button>
           </Form>
         </div>
       </div>
     </div>
   );
-
 }
