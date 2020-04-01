@@ -2,7 +2,7 @@
   "name": "metro-transit-trip",
   "description": "A React application providing Metro Transit route information for your next trip.",
   "version": "0.1.0",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
