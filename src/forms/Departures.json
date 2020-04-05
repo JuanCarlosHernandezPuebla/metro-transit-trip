@@ -1,6 +1,6 @@
 {
   "schema": {
-    "title": "Trip",
+    "title": "Departures by route",
     "type": "object",
     "properties": {
       "route": {
