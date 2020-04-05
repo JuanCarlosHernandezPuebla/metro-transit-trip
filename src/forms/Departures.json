@@ -1,0 +1,43 @@
+{
+  "schema": {
+    "title": "Trip",
+    "type": "object",
+    "properties": {
+      "route": {
+        "type": "string",
+        "title": "Route",
+        "enum": [],
+        "enumNames": []
+      },
+      "direction": {
+        "type": "string",
+        "title": "Direction",
+        "enum": [],
+        "enumNames": []
+      },
+      "stop": {
+        "type": "string",
+        "title": "Stop",
+        "enum": [],
+        "enumNames": []
+      }
+    }
+  },
+  "uiSchema": {
+    "route": {
+      "ui:title": "Route",
+      "ui:widget": "select",
+      "ui:placeholder": "Select a route"
+    },
+    "direction": {
+      "ui:title": "Direction",
+      "ui:widget": "select",
+      "ui:placeholder": "Select a direction"
+    },
+    "stop": {
+      "ui:title": "Stop",
+      "ui:widget": "select",
+      "ui:placeholder": "Select a stop"
+    }
+  }
+}
