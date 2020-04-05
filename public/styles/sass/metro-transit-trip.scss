@@ -6,6 +6,7 @@
 
 body {
   background-color: $body-color;
+  min-height: 1500px;
 }
 
 /*
@@ -21,10 +22,14 @@ header {
 * === Main ===
 */
 main {
-  min-height: 550px;
+  min-height: 750px;
 }
 h1 {
-  margin: 10px 0px;
+  margin: 15px 0px;
+}
+
+div.bold-text {
+  font-weight: bold;
 }
 
 /*
