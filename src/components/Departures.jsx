@@ -17,7 +17,7 @@ export default function Departures() {
   const rows = departures.map(departure => ({
     routeNumber: departure.RouteId,
     routeName: departure.Description,
-    departureTime: moment(departure.DepartureTime).format('h:mm a')
+    departureTime: moment.utc(departure.DepartureTime).format('h:mm a')
   }));
 
   return (
