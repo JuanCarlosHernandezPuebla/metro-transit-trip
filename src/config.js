@@ -7,7 +7,8 @@ const setupConfig = () => {
         endpoints: {
           routes: 'nextripv2/routes',
           directions: 'nextripv2/directions/{route}',
-          stops: 'nextripv2/stops/{route}/{direction}'
+          stops: 'nextripv2/stops/{route}/{direction}',
+          departures: 'nextripv2/{route}/{direction}/{stop}'
         }
       };
     case 'production':
@@ -17,7 +18,8 @@ const setupConfig = () => {
         endpoints: {
           routes: 'nextripv2/routes',
           directions: 'nextripv2/directions/{route}',
-          stops: 'nextripv2/stops/{route}/{direction}'
+          stops: 'nextripv2/stops/{route}/{direction}',
+          departures: 'nextripv2/{route}/{direction}/{stop}'
         }
       };
     default:
@@ -27,7 +29,8 @@ const setupConfig = () => {
         endpoints: {
           routes: 'nextripv2/routes',
           directions: 'nextripv2/directions/{route}',
-          stops: 'nextripv2/stops/{route}/{direction}'
+          stops: 'nextripv2/stops/{route}/{direction}',
+          departures: 'nextripv2/{route}/{direction}/{stop}'
         }
       };
   }
