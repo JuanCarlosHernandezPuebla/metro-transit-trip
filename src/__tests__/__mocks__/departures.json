@@ -1,0 +1,24 @@
+{
+  "Stop": {
+    "StopId": 56335,
+    "Latitude": 44.982905,
+    "Longitude": -93.277396,
+    "Description": "Target Field Station Platform 1"
+  },
+  "Departures": [
+    {
+      "Actual": false,
+      "BlockNumber": 4,
+      "DepartureText": "10:43",
+      "DepartureTime": "2020-04-05T22:43:00",
+      "Description": "to Mall of America",
+      "Gate": "1",
+      "RouteId": "Blue",
+      "DirectionId": 1,
+      "DirectionText": "SOUTHBOUND",
+      "Terminal": "",
+      "Latitude": 0,
+      "Longitude": 0
+    }
+  ]
+}

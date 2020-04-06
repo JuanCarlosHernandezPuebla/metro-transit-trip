@@ -1,0 +1,82 @@
+[
+  {
+    "PlaceCode": "TF22",
+    "Description": "Target Field Station Platform 2"
+  },
+  {
+    "PlaceCode": "TF12",
+    "Description": "Target Field Station Platform 1"
+  },
+  {
+    "PlaceCode": "WAR2",
+    "Description": "Warehouse District/ Hennepin Ave Station"
+  },
+  {
+    "PlaceCode": "5SNI",
+    "Description": "Nicollet Mall Station"
+  },
+  {
+    "PlaceCode": "GOVT",
+    "Description": "Government Plaza Station"
+  },
+  {
+    "PlaceCode": "USB2",
+    "Description": "U.S. Bank Stadium Station"
+  },
+  {
+    "PlaceCode": "CDRV",
+    "Description": "Cedar-Riverside Station"
+  },
+  {
+    "PlaceCode": "FRHI",
+    "Description": "Franklin Ave Station"
+  },
+  {
+    "PlaceCode": "LAHI",
+    "Description": "Lake St/ Midtown Station"
+  },
+  {
+    "PlaceCode": "38HI",
+    "Description": "38th St Station "
+  },
+  {
+    "PlaceCode": "46HI",
+    "Description": "46th St Station "
+  },
+  {
+    "PlaceCode": "50HI",
+    "Description": "50th St/ Minnehaha Park Station"
+  },
+  {
+    "PlaceCode": "VAMC",
+    "Description": "VA Medical Center Station"
+  },
+  {
+    "PlaceCode": "FTSN",
+    "Description": "Fort Snelling Station"
+  },
+  {
+    "PlaceCode": "LIND",
+    "Description": "MSP Airport Terminal 1 - Lindbergh Station"
+  },
+  {
+    "PlaceCode": "HHTE",
+    "Description": "MSP Airport Terminal 2 - Humphrey Station"
+  },
+  {
+    "PlaceCode": "AM34",
+    "Description": "American Blvd Station "
+  },
+  {
+    "PlaceCode": "BLCT",
+    "Description": "Bloomington Central Station"
+  },
+  {
+    "PlaceCode": "28AV",
+    "Description": "28th Ave Station"
+  },
+  {
+    "PlaceCode": "MAAM",
+    "Description": "Mall of America Station"
+  }
+]

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'react-jsonschema-form';
-import * as DeparturesForm from '../forms/Departures.json';
+import DeparturesForm from '../forms/Departures.json';
 import PropTypes from 'prop-types';
 import { Tabs, Tab, Typography, Box, makeStyles } from '@material-ui/core';
 import { config } from '../config';

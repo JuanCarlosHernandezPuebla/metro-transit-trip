@@ -1,0 +1,344 @@
+[
+  {
+    "RouteId": "901",
+    "ProviderId": 8,
+    "Description": "METRO Blue Line",
+    "RouteAbbr": "Blue"
+  },
+  {
+    "RouteId": "902",
+    "ProviderId": 8,
+    "Description": "METRO Green Line",
+    "RouteAbbr": "Grn"
+  },
+  {
+    "RouteId": "903",
+    "ProviderId": 9,
+    "Description": "METRO Red Line",
+    "RouteAbbr": "Red"
+  },
+  {
+    "RouteId": "921",
+    "ProviderId": 8,
+    "Description": "METRO A Line",
+    "RouteAbbr": "A Line"
+  },
+  {
+    "RouteId": "923",
+    "ProviderId": 8,
+    "Description": "METRO C Line",
+    "RouteAbbr": "C Line"
+  },
+  {
+    "RouteId": "2",
+    "ProviderId": 8,
+    "Description": "2 - Franklin Av - Riverside Av - U of M - 8th St SE",
+    "RouteAbbr": "2"
+  },
+  {
+    "RouteId": "3",
+    "ProviderId": 8,
+    "Description": "3 - U of M - Como Av - Energy Park Dr - Maryland Av",
+    "RouteAbbr": "3"
+  },
+  {
+    "RouteId": "4",
+    "ProviderId": 8,
+    "Description": "4 - New Brighton - Johnson St - Bryant Av - Southtown",
+    "RouteAbbr": "4"
+  },
+  {
+    "RouteId": "5",
+    "ProviderId": 8,
+    "Description": "5 - Brooklyn Ctr - Fremont - 26th Av - Chicago - MOA",
+    "RouteAbbr": "5"
+  },
+  {
+    "RouteId": "6",
+    "ProviderId": 8,
+    "Description": "6 - U of M - Hennepin - Xerxes - France - Southdale",
+    "RouteAbbr": "6"
+  },
+  {
+    "RouteId": "7",
+    "ProviderId": 8,
+    "Description": "7 - Plymouth - 27 Av - Minnehaha - 46 St Sta - 34 Av S",
+    "RouteAbbr": "7"
+  },
+  {
+    "RouteId": "9",
+    "ProviderId": 8,
+    "Description": "9 - Glenwood - Wayzata Blvd - Cedar Lk Rd - 46 St Sta",
+    "RouteAbbr": "9"
+  },
+  {
+    "RouteId": "10",
+    "ProviderId": 8,
+    "Description": "10 - Central Av - University Av - Northtown",
+    "RouteAbbr": "10"
+  },
+  {
+    "RouteId": "11",
+    "ProviderId": 8,
+    "Description": "11 - Columbia Heights - 2nd St NE - 4th Av S",
+    "RouteAbbr": "11"
+  },
+  {
+    "RouteId": "14",
+    "ProviderId": 8,
+    "Description": "14 - Robbinsdale - West Broadway - Bloomington Av",
+    "RouteAbbr": "14"
+  },
+  {
+    "RouteId": "16",
+    "ProviderId": 11,
+    "Description": "16 - University Av - Midway",
+    "RouteAbbr": "16"
+  },
+  {
+    "RouteId": "17",
+    "ProviderId": 8,
+    "Description": "17 - Minnetonka Blvd - Uptown - Washington St NE",
+    "RouteAbbr": "17"
+  },
+  {
+    "RouteId": "18",
+    "ProviderId": 8,
+    "Description": "18 - Nicollet Av -Grand Av - South Bloomington",
+    "RouteAbbr": "18"
+  },
+  {
+    "RouteId": "19",
+    "ProviderId": 8,
+    "Description": "19 - Olson Memorial Hwy - Penn Av N - Brooklyn Center",
+    "RouteAbbr": "19"
+  },
+  {
+    "RouteId": "21",
+    "ProviderId": 8,
+    "Description": "21 - Uptown - Lake St - Midway - Selby  Av",
+    "RouteAbbr": "21"
+  },
+  {
+    "RouteId": "22",
+    "ProviderId": 8,
+    "Description": "22 - Brooklyn Ctr - Lyndale Av N - Cedar - 28 Av S - VA",
+    "RouteAbbr": "22"
+  },
+  {
+    "RouteId": "23",
+    "ProviderId": 8,
+    "Description": "23 - Uptown - 38th St - Highland Village",
+    "RouteAbbr": "23"
+  },
+  {
+    "RouteId": "30",
+    "ProviderId": 11,
+    "Description": "30 - Broadway Crosstown - Westgate Sta",
+    "RouteAbbr": "30"
+  },
+  {
+    "RouteId": "32",
+    "ProviderId": 8,
+    "Description": "32 - Robbinsdale - Lowry Av - Rosedale",
+    "RouteAbbr": "32"
+  },
+  {
+    "RouteId": "46",
+    "ProviderId": 8,
+    "Description": "46 - 50St - 46St - 46St Sta - Highland Village",
+    "RouteAbbr": "46"
+  },
+  {
+    "RouteId": "54",
+    "ProviderId": 8,
+    "Description": "54 - Ltd Stop - W 7 St - Airport - MOA - Maplewood Mall",
+    "RouteAbbr": "54"
+  },
+  {
+    "RouteId": "62",
+    "ProviderId": 8,
+    "Description": "62 - Shoreview - Little Canada - Rice St - Signal Hills",
+    "RouteAbbr": "62"
+  },
+  {
+    "RouteId": "63",
+    "ProviderId": 8,
+    "Description": "63 - Raymond Sta - Grand Av - Sunray - McKnight Rd",
+    "RouteAbbr": "63"
+  },
+  {
+    "RouteId": "64",
+    "ProviderId": 8,
+    "Description": "64 - Payne - Maryland - White Bear Av - Maplewood Mall",
+    "RouteAbbr": "64"
+  },
+  {
+    "RouteId": "65",
+    "ProviderId": 8,
+    "Description": "65 - Dale St - Co Rd B - Rosedale",
+    "RouteAbbr": "65"
+  },
+  {
+    "RouteId": "67",
+    "ProviderId": 8,
+    "Description": "67 - W Minnehaha Av - Raymond Sta - Franklin Av",
+    "RouteAbbr": "67"
+  },
+  {
+    "RouteId": "68",
+    "ProviderId": 8,
+    "Description": "68 - Jackson St - Robert St - W St Paul - Inver Hills",
+    "RouteAbbr": "68"
+  },
+  {
+    "RouteId": "70",
+    "ProviderId": 8,
+    "Description": "70 - St Clair Av - W 7th St - Burns Av - Sunray",
+    "RouteAbbr": "70"
+  },
+  {
+    "RouteId": "71",
+    "ProviderId": 8,
+    "Description": "71 - Little Canada - Westminster- Concord - Inver Hills",
+    "RouteAbbr": "71"
+  },
+  {
+    "RouteId": "74",
+    "ProviderId": 8,
+    "Description": "74 - 46th St - Randolph - W 7th St - E 7th St - Sunray",
+    "RouteAbbr": "74"
+  },
+  {
+    "RouteId": "80",
+    "ProviderId": 11,
+    "Description": "80 - Maplewood - White Bear Av - Sunray",
+    "RouteAbbr": "80"
+  },
+  {
+    "RouteId": "83",
+    "ProviderId": 11,
+    "Description": "83 - HarMar Target - Lexington Av",
+    "RouteAbbr": "83"
+  },
+  {
+    "RouteId": "84",
+    "ProviderId": 11,
+    "Description": "84 - Snelling - Highland Village - Sibley Plaza",
+    "RouteAbbr": "84"
+  },
+  {
+    "RouteId": "87",
+    "ProviderId": 11,
+    "Description": "87 - Rosedale - U of M St Paul - Cleveland - Highland",
+    "RouteAbbr": "87"
+  },
+  {
+    "RouteId": "121",
+    "ProviderId": 1,
+    "Description": "121 - U of M - Campus Connector",
+    "RouteAbbr": "121"
+  },
+  {
+    "RouteId": "420",
+    "ProviderId": 9,
+    "Description": "420 - Rosemount - Apple Valley Flex",
+    "RouteAbbr": "420"
+  },
+  {
+    "RouteId": "440",
+    "ProviderId": 9,
+    "Description": "440 - Apple Valley - Cedar Grove Transit Sta - VA Hosp",
+    "RouteAbbr": "440"
+  },
+  {
+    "RouteId": "442",
+    "ProviderId": 9,
+    "Description": "442 - Burnsville Center - Apple Valley",
+    "RouteAbbr": "442"
+  },
+  {
+    "RouteId": "444",
+    "ProviderId": 9,
+    "Description": "444 - Savage - Burnsville - Mall of America",
+    "RouteAbbr": "444"
+  },
+  {
+    "RouteId": "445",
+    "ProviderId": 9,
+    "Description": "445 - Eagan - Cedar Grove Transit Sta",
+    "RouteAbbr": "445"
+  },
+  {
+    "RouteId": "495",
+    "ProviderId": 9,
+    "Description": "495 - Shakopee - Mall of America",
+    "RouteAbbr": "495"
+  },
+  {
+    "RouteId": "515",
+    "ProviderId": 8,
+    "Description": "515 - Southdale - 66th St - Bloomington Av - VA - MOA",
+    "RouteAbbr": "515"
+  },
+  {
+    "RouteId": "538",
+    "ProviderId": 11,
+    "Description": "538 - Southdale - York Av - Southtown - 86th St - MOA",
+    "RouteAbbr": "538"
+  },
+  {
+    "RouteId": "539",
+    "ProviderId": 11,
+    "Description": "539 - Southtown - Normandale -Valley West - 98th - MOA",
+    "RouteAbbr": "539"
+  },
+  {
+    "RouteId": "540",
+    "ProviderId": 11,
+    "Description": "540 - Edina - Richfield - 77th St - MOA",
+    "RouteAbbr": "540"
+  },
+  {
+    "RouteId": "612",
+    "ProviderId": 8,
+    "Description": "612 - Uptown - Excelsior Blvd-Hopkins - Hopkins - Opus",
+    "RouteAbbr": "612"
+  },
+  {
+    "RouteId": "645",
+    "ProviderId": 8,
+    "Description": "645 - Ltd Stop - Mound - Wayzata - Ridgedale - Mpls",
+    "RouteAbbr": "645"
+  },
+  {
+    "RouteId": "721",
+    "ProviderId": 8,
+    "Description": "721 - Ltd Stop - Brooklyn Center - Target Campus - Mpls",
+    "RouteAbbr": "721"
+  },
+  {
+    "RouteId": "722",
+    "ProviderId": 8,
+    "Description": "722 - Brooklyn Ctr - Humboldt - Shingle Creek",
+    "RouteAbbr": "722"
+  },
+  {
+    "RouteId": "723",
+    "ProviderId": 8,
+    "Description": "723 - Starlite - N Henn Comm College - Brooklyn Ctr",
+    "RouteAbbr": "723"
+  },
+  {
+    "RouteId": "724",
+    "ProviderId": 8,
+    "Description": "724 - Ltd Stop - Target Campus - Starlite - Brooklyn Ctr",
+    "RouteAbbr": "724"
+  },
+  {
+    "RouteId": "906",
+    "ProviderId": 2,
+    "Description": "906 - Light Rail Shuttle - Lindbergh - Humphrey",
+    "RouteAbbr": "906"
+  }
+]

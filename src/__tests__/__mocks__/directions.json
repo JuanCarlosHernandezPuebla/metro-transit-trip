@@ -1,0 +1,10 @@
+[
+  {
+    "DirectionId": 4,
+    "DirectionName": "NORTHBOUND"
+  },
+  {
+    "DirectionId": 1,
+    "DirectionName": "SOUTHBOUND"
+  }
+]
