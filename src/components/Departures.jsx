@@ -14,7 +14,7 @@ export default function Departures() {
   const [stop, setStop] = useState({});
   const [departures, setDepartures] = useState([]);
 
-  const rows = departures.map(departure => ({
+  const rows = (departures || []).map(departure => ({
     routeNumber: departure.RouteId,
     routeName: departure.Description,
     departureTime: moment.utc(departure.DepartureTime).format('h:mm a')
