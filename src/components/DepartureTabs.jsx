@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'react-jsonschema-form';
 import DeparturesForm from '../forms/Departures.json';
+import SearchWidget from '../forms/Widgets/SearchWidget';
 import PropTypes from 'prop-types';
 import { Tabs, Tab, Typography, Box, makeStyles } from '@material-ui/core';
 import { config } from '../config';
-import { cloneDeep, isNil, set } from 'lodash';
+import { cloneDeep, isNil, set, isEmpty } from 'lodash';
 
 const _ = {
   cloneDeep,
   isNil,
-  set
+  set,
+  isEmpty
 };
 
 const metroTransitEntry = config['metroTransitEntry'];
@@ -20,7 +22,9 @@ const directionsEndPoint = `${metroTransitEntry}${config['endpoints']['direction
 
 const stopsEndPoint = `${metroTransitEntry}${config['endpoints']['stops']}`;
 
-const departuresEndPoint = `${metroTransitEntry}${config['endpoints']['departures']}`;
+const routeDeparturesEndPoint = `${metroTransitEntry}${config['endpoints']['routeDepartures']}`;
+
+const stopDeparturesEndPoint = `${metroTransitEntry}${config['endpoints']['stopDepartures']}`;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -64,11 +68,15 @@ export default function DepartureTabs(props) {
   const [value, setValue] = useState(0);
 
   const [form, setForm] = useState({
-    schema: DeparturesForm.schema,
-    uiSchema: DeparturesForm.uiSchema
+    routeSchema: DeparturesForm.routeSchema,
+    routeUiSchema: DeparturesForm.routeUiSchema,
+    stopSchema: DeparturesForm.stopSchema,
+    stopUiSchema: DeparturesForm.stopUiSchema
   });
 
-  const [formData, setFormData] = useState({});
+  const [routeFormData, setRouteFormData] = useState({});
+
+  const [stopFormData, setStopFormData] = useState({});
 
   const [routes, setRoutes] = useState([]);
 
@@ -80,42 +88,42 @@ export default function DepartureTabs(props) {
 
   useEffect(() => {
     const newForm = _.cloneDeep(form);
-    setRouteEnums(newForm, 'schema.properties.route');
+    setRouteEnums(newForm, 'routeSchema.properties.route');
     setForm(newForm);
   }, [routes]);
 
   useEffect(() => {
     const newForm = _.cloneDeep(form);
-    setDirectionEnums(newForm, 'schema.properties.direction');
+    setDirectionEnums(newForm, 'routeSchema.properties.direction');
     setForm(newForm);
   }, [directions]);
 
   useEffect(() => {
     const newForm = _.cloneDeep(form);
-    setStopEnums(newForm, 'schema.properties.stop');
+    setStopEnums(newForm, 'routeSchema.properties.stop');
     setForm(newForm);
   }, [stops]);
 
   useEffect(() => {
-    const { route } = formData;
+    const { route } = routeFormData;
     if (!_.isNil(route)) {
       loadDirections(route);
     }
-  }, [formData.route]);
+  }, [routeFormData.route]);
 
   useEffect(() => {
-    const { route, direction } = formData;
+    const { route, direction } = routeFormData;
     if (!_.isNil(route) && !_.isNil(direction)) {
       loadStops(route, direction);
     }
-  }, [formData.direction]);
+  }, [routeFormData.direction]);
 
   useEffect(() => {
-    const { route, direction, stop } = formData;
+    const { route, direction, stop } = routeFormData;
     if (!_.isNil(route) && !_.isNil(direction) && !_.isNil(stop)) {
-      loadDepartures(route, direction, stop);
+      loadRouteDepartures(route, direction, stop);
     }
-  }, [formData.stop]);
+  }, [routeFormData.stop]);
 
   const loadRoutes = () => {
     fetch(routesEndPoint, {
@@ -147,10 +155,10 @@ export default function DepartureTabs(props) {
       .catch(error => console.error('Error: ', error));
   };
 
-  const loadDepartures = (route, direction, stop) => {
+  const loadRouteDepartures = (route, direction, stop) => {
     const { setStop, setDepartures } = props;
     fetch(
-      departuresEndPoint
+      routeDeparturesEndPoint
         .replace('{route}', route)
         .replace('{direction}', direction)
         .replace('{stop}', stop),
@@ -158,6 +166,19 @@ export default function DepartureTabs(props) {
         method: 'GET'
       }
     )
+      .then(response => response.json())
+      .then(data => {
+        setStop(data.Stop);
+        setDepartures(data.Departures);
+      })
+      .catch(error => console.error('Error: ', error));
+  };
+
+  const loadStopDepartures = stopId => {
+    const { setStop, setDepartures } = props;
+    fetch(stopDeparturesEndPoint.replace('{stopId}', stopId), {
+      method: 'GET'
+    })
       .then(response => response.json())
       .then(data => {
         setStop(data.Stop);
@@ -209,8 +230,25 @@ export default function DepartureTabs(props) {
     setValue(newValue);
   };
 
-  const handleFormDataChange = formData => {
-    setFormData(formData);
+  const handleRouteFormDataChange = formData => {
+    setRouteFormData(formData);
+  };
+
+  const handleStopSubmit = formData => {
+    const { stop } = formData;
+
+    if (!_.isNil(stop) && !_.isEmpty(stop)) {
+      loadStopDepartures(stop);
+    }
+  };
+
+  const transformErrors = errors => {
+    return errors.map(error => {
+      if (error.name === 'pattern') {
+        error.message = 'Only digits are allowed';
+      }
+      return error;
+    });
   };
 
   return (
@@ -226,17 +264,26 @@ export default function DepartureTabs(props) {
       <TabPanel value={value} index={0}>
         <Form
           id={'route_info_form'}
-          schema={form.schema}
-          uiSchema={form.uiSchema}
-          formData={formData}
-          onChange={({ formData }) => handleFormDataChange(formData)}>
+          schema={form.routeSchema}
+          uiSchema={form.routeUiSchema}
+          formData={routeFormData}
+          onChange={({ formData }) => handleRouteFormDataChange(formData)}>
           <button type='submit' className='d-none'></button>
         </Form>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {
-          // TODO:
-        }
+        <Form
+          id={'stop_info_form'}
+          schema={form.stopSchema}
+          transformErrors={transformErrors}
+          showErrorList={false}
+          uiSchema={form.stopUiSchema}
+          formData={stopFormData}
+          onChange={({ formData }) => setStopFormData(formData)}
+          onSubmit={({ formData }) => handleStopSubmit(formData)}
+          widgets={{ search: SearchWidget }}>
+          <button type='submit' className='d-none'></button>
+        </Form>
       </TabPanel>
     </div>
   );

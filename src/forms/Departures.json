@@ -1,5 +1,5 @@
 {
-  "schema": {
+  "routeSchema": {
     "title": "Departures by route",
     "type": "object",
     "properties": {
@@ -23,7 +23,7 @@
       }
     }
   },
-  "uiSchema": {
+  "routeUiSchema": {
     "route": {
       "ui:title": "Route",
       "ui:widget": "select",
@@ -38,6 +38,24 @@
       "ui:title": "Stop",
       "ui:widget": "select",
       "ui:placeholder": "Select a stop"
+    }
+  },
+  "stopSchema": {
+    "title": "Departures by stop",
+    "type": "object",
+    "properties": {
+      "stop": {
+        "type": "string",
+        "pattern": "^\\d*$",
+        "title": "Stop"
+      }
+    }
+  },
+  "stopUiSchema": {
+    "stop": {
+      "ui:title": "Stop",
+      "ui:widget": "search",
+      "ui:placeholder": "Enter a stop number"
     }
   }
 }
