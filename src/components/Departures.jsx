@@ -12,15 +12,17 @@ export default function Departures() {
   const [departures, setDepartures] = useState([]);
 
   return (
-    <div className='container'>
-      <div className='col-sm-12'>
-        <h1>Metro Transit Departures</h1>
-        <div className='col-sm-12 col-md-6'>
-          <DepartureTabs setStop={setStop} setDepartures={setDepartures} />
+    <div className='container departures-main-content'>
+      <div className='row'>
+        <div className='col-sm-12'>
+          <h1>Metro Transit Departures</h1>
+          <div className='col-sm-12 col-md-6'>
+            <DepartureTabs setStop={setStop} setDepartures={setDepartures} />
+          </div>
+          {!_.isEmpty(stop) && (
+            <DeparturesInformation stop={stop} departures={departures} />
+          )}
         </div>
-        {!_.isEmpty(stop) && (
-          <DeparturesInformation stop={stop} departures={departures} />
-        )}
       </div>
     </div>
   );
