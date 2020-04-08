@@ -4,9 +4,13 @@
 * === Body ===
 */
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: $body-color;
-  min-height: 1500px;
 }
 
 /*
@@ -27,14 +31,33 @@ header {
 * === Main ===
 */
 main {
-  min-height: 750px;
+  min-height: 100%;
+  height: auto;
 }
-h1 {
+h1,
+h2,
+h3,
+h5,
+h6 {
   margin: 15px 0px;
+  font-weight: 400;
 }
 
 div.bold-text {
   font-weight: bold;
+}
+
+.departures-main-content {
+  margin-bottom: 150px;
+}
+
+.departures-map {
+  height: 600px;
+  width: 100%;
+  margin-top: 10px;
+  & div {
+    z-index: 0;
+  }
 }
 
 /*
