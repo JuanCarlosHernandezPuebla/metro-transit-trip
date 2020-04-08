@@ -6,13 +6,16 @@ import {
   makeStyles,
   Link
 } from '@material-ui/core';
-import { Train as TrainIcon, GitHub as GitHubIcon } from '@material-ui/icons';
+import {
+  DirectionsBus as DirectionsBusIcon,
+  GitHub as GitHubIcon
+} from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
-  homeLink: {
+  departuresLink: {
     marginRight: theme.spacing(2)
   },
   title: {
@@ -28,7 +31,8 @@ export default function Header() {
         <Toolbar>
           <Typography className={classes.root}>
             <Link href='/departures' color='inherit'>
-              <TrainIcon className={classes.homeLink} /> Departures
+              <DirectionsBusIcon className={classes.departuresLink} />
+              Departures
             </Link>
           </Typography>
           <Link
