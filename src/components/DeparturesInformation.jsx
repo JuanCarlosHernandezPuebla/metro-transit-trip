@@ -1,5 +1,10 @@
 import React from 'react';
 import CustomTable from './CustomTable';
+import { isEmpty } from 'lodash';
+
+const _ = {
+  isEmpty
+};
 
 const moment = require('moment');
 
