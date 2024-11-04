@@ -191,12 +191,12 @@ export default function DepartureTabs(props) {
     _.set(
       form,
       path + '.enum',
-      (routes || []).map(route => route.RouteId)
+      (routes || []).map(route => route['route_id'])
     );
     _.set(
       form,
       path + '.enumNames',
-      (routes || []).map(route => route.Description)
+      (routes || []).map(route => route['route_label'])
     );
   };
 
@@ -204,12 +204,12 @@ export default function DepartureTabs(props) {
     _.set(
       form,
       path + '.enum',
-      (directions || []).map(direction => direction.DirectionId)
+      (directions || []).map(direction => direction['direction_id'])
     );
     _.set(
       form,
       path + '.enumNames',
-      (directions || []).map(direction => direction.DirectionName)
+      (directions || []).map(direction => direction['direction_name'])
     );
   };
 
@@ -217,12 +217,12 @@ export default function DepartureTabs(props) {
     _.set(
       form,
       path + '.enum',
-      (stops || []).map(stop => stop.PlaceCode)
+      (stops || []).map(stop => stop['place_code'])
     );
     _.set(
       form,
       path + '.enumNames',
-      (stops || []).map(stop => stop.Description)
+      (stops || []).map(stop => stop['description'])
     );
   };
 
